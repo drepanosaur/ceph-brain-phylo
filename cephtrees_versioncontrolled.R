@@ -50,15 +50,45 @@ plot(lindbackbone260922)
 #uhh ok that technically worked but they appear to form a vertical branch and I don't know what that means
 View(lindbackbone260922$edge.length)
 write.nexus(lindbackbone260922, file="~/nonhumans/di_cephproject/phylos/lindbackbone260922.nex")
-#all right I edited the split between moschata and cirrhosa to be 0.35 and subtracted that from the length of the branch splitting w/ E. dofleini. no idea if that's correct
-lindbackbone260922 <- read.tree(text="(((Cirrothauma_murrayi:1.258289268,((((Octopus_cyanea:0.2587354827,Octopus_vulgaris:0.2298880296):0.02414536915,Hapalochlaena_maculosa:0.2185500487):0.1504123437,((Vitreledonella_richardi:0.1697376951,(Japetella_diaphana:0.07032929413,Bolitaena_pygmaea:0.05840129681):0.1868675194):0.1115459812,((Eledone_cirrhosa:0.35,Eledone_moschata:0.35):0.310492,Enteroctopus_dofleini:0.2733696093):0.03411134877):0.07293646064):0.06490643981,(Tremoctopus_violaceus:0.3157350472,Haliphron_atlanticus:0.3185967595):0.2524401908):0.3919037556):0.212799331,Vampyroteuthis_infernalis:0.5681822075):0.5219330219,(Sepietta_obscura:0.3417163464,(((Lolliguncula_brevis:0.2586438078,(Loligo_vulgaris:0.07481413798,Loligo_forbesii:0.05991031616):0.0996676951):0.2284549308,(Spirula_spirula:0.2980111626,((Bathyteuthis_abyssicola:0.2546799834,Chtenopteryx_sicula:0.1688346575):0.06861698003,(((Taonius_pavo:0.08615211965,Teuthowenia_megalops:0.2089150079):0.08438960941,Cranchia_scabra:0.2733861578):0.07084226746,(((Pterygioteuthis_giardi_hoylei:0.4578683631,(Onychoteuthis_banksii:0.2329809862,Gonatus_fabricii:0.2628152996):0.01003543753):0.02489881901,((Lycoteuthis_lorigera:0.2189566998,(Discoteuthis_laciniosa:0.2113527365,(Joubiniteuthis_portieri:0.223142566,(Grimalditeuthis_bonplandi:0.1726735617,Chiroteuthis_veranyi:0.1705331777):0.06655236466):0.04170656954):0.02283367085):0.01191909964,(Neoteuthis_thielei:0.1305724971,Architeuthis_dux:0.1394245892):0.08008312883):0.02839006206):0.01090029589,Histioteuthis_miranda:0.2711635153):0.01682319922):0.04889282398):0.08147689972):0.02575051746):0.0366439316,(Sepia_officinalis:0.1886095277,Sepiella_japonica:0.1161219329):0.3562701358):0.0404534956):0.0614491775);")
+#all right I edited the split between moschata and cirrhosa to be 0.35 and subtracted that from the length of the branch splitting w/ E. dofleini. 
+#no idea if that's correct
+lindbackbone260922 <- read.tree(text="(((Cirrothauma_murrayi:1.258289268,((((Octopus_cyanea:0.2587354827,
+                                Octopus_vulgaris:0.2298880296):0.02414536915,
+                                Hapalochlaena_maculosa:0.2185500487):0.1504123437,
+                                ((Vitreledonella_richardi:0.1697376951,
+                                (Japetella_diaphana:0.07032929413,
+                                Bolitaena_pygmaea:0.05840129681):0.1868675194):0.1115459812,
+                                ((Eledone_cirrhosa:0.35,Eledone_moschata:0.35):0.310492,
+                                Enteroctopus_dofleini:0.2733696093):0.03411134877):0.07293646064):0.06490643981,
+                                (Tremoctopus_violaceus:0.3157350472,
+                                Haliphron_atlanticus:0.3185967595):0.2524401908):0.3919037556):0.212799331,
+                                Vampyroteuthis_infernalis:0.5681822075):0.5219330219,
+                                (Sepietta_obscura:0.3417163464,
+                                (((Lolliguncula_brevis:0.2586438078,
+                                (Loligo_vulgaris:0.07481413798,
+                                Loligo_forbesii:0.05991031616):0.0996676951):0.2284549308,
+                                (Spirula_spirula:0.2980111626,((Bathyteuthis_abyssicola:0.2546799834,
+                                Chtenopteryx_sicula:0.1688346575):0.06861698003,
+                                (((Taonius_pavo:0.08615211965,Teuthowenia_megalops:0.2089150079):0.08438960941,
+                                Cranchia_scabra:0.2733861578):0.07084226746,
+                                (((Pterygioteuthis_giardi_hoylei:0.4578683631,
+                                (Onychoteuthis_banksii:0.2329809862,
+                                Gonatus_fabricii:0.2628152996):0.01003543753):0.02489881901,
+                                ((Lycoteuthis_lorigera:0.2189566998,(Discoteuthis_laciniosa:0.2113527365,
+                                (Joubiniteuthis_portieri:0.223142566,
+                                (Grimalditeuthis_bonplandi:0.1726735617,
+                                Chiroteuthis_veranyi:0.1705331777):0.06655236466):0.04170656954):0.02283367085):0.01191909964,
+                                (Neoteuthis_thielei:0.1305724971,Architeuthis_dux:0.1394245892):0.08008312883):0.02839006206):0.01090029589,
+                                Histioteuthis_miranda:0.2711635153):0.01682319922):0.04889282398):0.08147689972):0.02575051746):0.0366439316,
+                                (Sepia_officinalis:0.1886095277,Sepiella_japonica:0.1161219329):0.3562701358):0.0404534956):0.0614491775);")
 plot(lindbackbone260922)
 #this was incredibly inefficient to add a single taxon
 plot(lindbackbone260922, use.edge.length=FALSE, font=1)
 
 is.ultrametric(lindbackbone260922)
 #editing tree, 08.10.22
-mini <- read.tree(text="((((((Helicocranchia_papillata), Galiteuthis_glacialis), Taonius_pavo), Teuthowenia_megalops), Megalocranchia_maxima), (Leachia_dislocata, Cranchia_scabra));")
+mini <- read.tree(text="((((((Helicocranchia_papillata), Galiteuthis_glacialis), Taonius_pavo), Teuthowenia_megalops), 
+                  Megalocranchia_maxima), (Leachia_dislocata, Cranchia_scabra));")
 plot(mini)
 
 #Jan sent this 09.10.22
@@ -66,7 +96,8 @@ allcock2010 <- read.tree(text="((Ocythoe_tuberculata, (Argonauta_argo)), (Tremoc
 plot(allcock2010)
 
 #all right just need to add ocythoe and argonauts as sister clade to T. violaceus and H. atlanticus on current tree
-#ok I'm going to get rid of the branch lengths, because even if the lengths in the tree Annie sent are in mya (which I don't think they are, they are described in paper as a topology) they aren't ultrametric)
+#ok I'm going to get rid of the branch lengths, because even if the lengths in the tree Annie sent are in mya 
+#(which I don't think they are, they are described in paper as a topology) they aren't ultrametric)
 cephtree111022 <- lindbackbone260922
 cephtree111022$edge.length <- NULL
 plot(cephtree111022)
@@ -86,52 +117,6 @@ cephtree111022 <- read.tree(text="(((Cirrothauma_murrayi,((((Octopus_cyanea,Octo
                             (Neoteuthis_thielei,Architeuthis_dux))),Histioteuthis_miranda))))),
                             (Sepia_officinalis,Sepiella_japonica))));")
 
-# FAILED ATTEMPTS----
-# plotTree(cephtree111022, node.numbers=T, fsize=0.6)
-# #ok H. atlanticus and T. violaceus are node 49
-# #not sure if bind.tree is going to add them as duplicates or replace them
-# cephtree111022 <- bind.tree(cephtree111022, allcock2010, where=49)
-# 
-# plotTree(cephtree111022, node.numbers=T, fsize=0.6)
-# #yeah it duplicated them. fuck. 
-# 
-# #correct tree, again!
-# cephtree111022 <- read.tree(text="(((Cirrothauma_murrayi,((((Octopus_cyanea,Octopus_vulgaris),
-#                             Hapalochlaena_maculosa),((Vitreledonella_richardi,(Japetella_diaphana,Bolitaena_pygmaea)),
-#                             ((Eledone_cirrhosa,Eledone_moschata),Enteroctopus_dofleini))),
-#                             (Tremoctopus_violaceus,Haliphron_atlanticus))),Vampyroteuthis_infernalis),
-#                             (Sepietta_obscura,(((Lolliguncula_brevis,(Loligo_vulgaris,Loligo_forbesii)),
-#                             (Spirula_spirula,((Bathyteuthis_abyssicola,Chtenopteryx_sicula),
-#                             (((Taonius_pavo,Teuthowenia_megalops),Cranchia_scabra),
-#                             (((Pterygioteuthis_giardi_hoylei,(Onychoteuthis_banksii,Gonatus_fabricii)),
-#                             ((Lycoteuthis_lorigera,(Discoteuthis_laciniosa,(Joubiniteuthis_portieri,
-#                             (Grimalditeuthis_bonplandi,Chiroteuthis_veranyi)))),
-#                             (Neoteuthis_thielei,Architeuthis_dux))),Histioteuthis_miranda))))),
-#                             (Sepia_officinalis,Sepiella_japonica))));")
-# plotTree(cephtree111022, node.numbers=T, fsize=0.6)
-# 
-# cephtree111022 <- bind.tree(cephtree111022, allcock2010, where=40)
-# plot(cephtree111022)
-# #ok that just put it in the wrong place
-# 
-# #and again
-# cephtree111022 <- read.tree(text="(((Cirrothauma_murrayi,((((Octopus_cyanea,Octopus_vulgaris),Hapalochlaena_maculosa),
-#                             ((Vitreledonella_richardi,(Japetella_diaphana,Bolitaena_pygmaea)),
-#                             ((Eledone_cirrhosa,Eledone_moschata),Enteroctopus_dofleini))),
-#                             (Tremoctopus_violaceus,Haliphron_atlanticus))),Vampyroteuthis_infernalis),
-#                             (Sepietta_obscura,(((Lolliguncula_brevis,(Loligo_vulgaris,Loligo_forbesii)),
-#                             (Spirula_spirula,((Bathyteuthis_abyssicola,Chtenopteryx_sicula),
-#                             (((Taonius_pavo,Teuthowenia_megalops),Cranchia_scabra),
-#                             (((Pterygioteuthis_giardi_hoylei,(Onychoteuthis_banksii,Gonatus_fabricii)),
-#                             ((Lycoteuthis_lorigera,(Discoteuthis_laciniosa,(Joubiniteuthis_portieri,
-#                             (Grimalditeuthis_bonplandi,Chiroteuthis_veranyi)))),
-#                             (Neoteuthis_thielei,Architeuthis_dux))),Histioteuthis_miranda))))),
-#                             (Sepia_officinalis,Sepiella_japonica))));")
-# 
-# plotTree(cephtree111022, node.numbers=T, fsize=0.6)
-# cephtree111022 <- bind.tip(cephtree111022, "(Ocythoe_tuberculata, (Argonauta))", where=49)
-# plot(cephtree111022, font=1)
-# #wtf
 
 #SUCCESFULLY BOUND ARGONAUTIDS----
 #ok, prune off H. atlanticus so it's just a single tip, then try replacing
@@ -200,7 +185,8 @@ plot(gog)
 #so backbone is cephtree201022
 #source tree is sanchez2018
 #sanchez 2018 species (not added to tree as of 20.10.22)
-sanchez2018 <- read.tree(text="((((((Helicocranchia_papillata), Galiteuthis_glacialis), Taonius_pavo), Teuthowenia_megalops), Megalocranchia_maxima), (Leachia_dislocata, Cranchia_scabra));")
+sanchez2018 <- read.tree(text="((((((Helicocranchia_papillata), Galiteuthis_glacialis), Taonius_pavo), Teuthowenia_megalops),
+                         Megalocranchia_maxima), (Leachia_dislocata, Cranchia_scabra));")
 plot(sanchez2018)
 
 dato <- data.frame(bind=c("Leachia_dislocata", "Megalocranchia_maxima", "Galiteuthis_glacialis-Helicocranchia_papillata"),
@@ -216,24 +202,71 @@ jh$edge.length <- NULL
 plot(jh)
 cephtree241022 <- jh
 plot(cephtree241022)
+#because I somehow didn't do this earlier, re-add species for 241022 tree and write to files because R is going to delete them
 write.tree(cephtree241022, file="~/nonhumans/di_cephproject/phylos/cephtree241022.tre")
 write.nexus(cephtree241022, file="~/nonhumans/di_cephproject/phylos/cephtree241022.nex")
 
 plot(read.tree(text="(Sepioteuthis sepioidea, (Lolliguncula brevis, ((Loligo forbesi, Loligo vulgaris), (Alloteuthis media, Alloteuthis subulata))));"))
-plot(read.tree(text=" (Loligo, (Sepioteuthis, (Alloteuthis, Lolliguncula)));"))
+plot(read.tree(text="(Loligo, (Sepioteuthis, (Alloteuthis, Lolliguncula)));"))
 
-#because I somehow didn't do this earlier, re-add species for 241022 tree and write to files because R is going to delete them
+#this is the 241022 tree
+cephtree291122 <- read.tree(text="(((Cirrothauma_murrayi,((((Octopus_cyanea,Octopus_vulgaris),Hapalochlaena_maculosa),
+                            ((Vitreledonella_richardi,(Japetella_diaphana,Bolitaena_pygmaea)),
+                            ((Eledone_cirrhosa,Eledone_moschata),Enteroctopus_dofleini))),
+                            ((Ocythoe_tuberculata,(Argonauta_argo)),
+                            (Tremoctopus_violaceus,Haliphron_atlanticus)))),
+                            Vampyroteuthis_infernalis),((((Sepietta_oweniana,Sepietta_obscura),Sepiola_rondeleti),
+                            (Heteroteuthis_dispar,Neorossia_caroli)),
+                            (((Lolliguncula_brevis,(Loligo_vulgaris,Loligo_forbesii)),
+                            (Spirula_spirula,((Bathyteuthis_abyssicola,Chtenopteryx_sicula),
+                            (((((Taonius_pavo,(Helicocranchia_papillata,Galiteuthis_glacialis)),
+                            Teuthowenia_megalops),Megalocranchia_maxima),
+                            (Cranchia_scabra,Leachia_dislocata)),(((Pterygioteuthis_giardi_hoylei,
+                            (Onychoteuthis_banksii,Gonatus_fabricii)),
+                            ((Lycoteuthis_lorigera,(Discoteuthis_laciniosa,
+                            (Joubiniteuthis_portieri,(Grimalditeuthis_bonplandi,Chiroteuthis_veranyi)))),
+                            (Neoteuthis_thielei,Architeuthis_dux))),Histioteuthis_miranda))))),
+                            (Sepia_officinalis,Sepiella_japonica))));")
+#now add in other taxa
 #then add Amphitretus pelagicus as a sister to Vitreledonelidae
 #and Cirroteuthis_muelleri sister to Cirrothauma_murrayi
 #(both Sanchez et al. 2018)
 #and Mastigoteuthis_schmidti sister to Joubiniteuthis_portieri (fernandez-alvarez2022 & sanchez2018)
-
-#this is the 241022 tree
-cephtree291122 <- read.tree(text="(((Cirrothauma_murrayi,((((Octopus_cyanea,Octopus_vulgaris),Hapalochlaena_maculosa),((Vitreledonella_richardi,(Japetella_diaphana,Bolitaena_pygmaea)),((Eledone_cirrhosa,Eledone_moschata),Enteroctopus_dofleini))),((Ocythoe_tuberculata,(Argonauta_argo)),(Tremoctopus_violaceus,Haliphron_atlanticus)))),Vampyroteuthis_infernalis),((((Sepietta_oweniana,Sepietta_obscura),Sepiola_rondeleti),(Heteroteuthis_dispar,Neorossia_caroli)),(((Lolliguncula_brevis,(Loligo_vulgaris,Loligo_forbesii)),(Spirula_spirula,((Bathyteuthis_abyssicola,Chtenopteryx_sicula),(((((Taonius_pavo,(Helicocranchia_papillata,Galiteuthis_glacialis)),Teuthowenia_megalops),Megalocranchia_maxima),(Cranchia_scabra,Leachia_dislocata)),(((Pterygioteuthis_giardi_hoylei,(Onychoteuthis_banksii,Gonatus_fabricii)),((Lycoteuthis_lorigera,(Discoteuthis_laciniosa,(Joubiniteuthis_portieri,(Grimalditeuthis_bonplandi,Chiroteuthis_veranyi)))),(Neoteuthis_thielei,Architeuthis_dux))),Histioteuthis_miranda))))),(Sepia_officinalis,Sepiella_japonica))));")
-#now add in other taxa
-cephtree291122 <- read.tree(text="((( (Cirrothauma_murrayi,Cirroteuthis_muelleri) ,((((Octopus_cyanea,Octopus_vulgaris),Hapalochlaena_maculosa),(( (Vitreledonella_richardi,Amphitretus_pelagicus) ,(Japetella_diaphana,Bolitaena_pygmaea)),((Eledone_cirrhosa,Eledone_moschata),Enteroctopus_dofleini))),((Ocythoe_tuberculata,(Argonauta_argo)),(Tremoctopus_violaceus,Haliphron_atlanticus)))),Vampyroteuthis_infernalis),((((Sepietta_oweniana,Sepietta_obscura),Sepiola_rondeleti),(Heteroteuthis_dispar,Neorossia_caroli)),(((Lolliguncula_brevis,(Loligo_vulgaris,Loligo_forbesii)),(Spirula_spirula,((Bathyteuthis_abyssicola,Chtenopteryx_sicula),(((((Taonius_pavo,(Helicocranchia_papillata,Galiteuthis_glacialis)),Teuthowenia_megalops),Megalocranchia_maxima),(Cranchia_scabra,Leachia_dislocata)),(((Pterygioteuthis_giardi_hoylei,(Onychoteuthis_banksii,Gonatus_fabricii)),((Lycoteuthis_lorigera,(Discoteuthis_laciniosa,( (Joubiniteuthis_portieri,Mastigoteuthis_schmidti) ,(Grimalditeuthis_bonplandi,Chiroteuthis_veranyi)))),(Neoteuthis_thielei,Architeuthis_dux))),Histioteuthis_miranda))))),(Sepia_officinalis,Sepiella_japonica))));")
+cephtree291122 <- read.tree(text="((((Cirrothauma_murrayi,Cirroteuthis_muelleri),((((Octopus_cyanea,Octopus_vulgaris),Hapalochlaena_maculosa),
+                            (((Vitreledonella_richardi,Amphitretus_pelagicus) ,(Japetella_diaphana,Bolitaena_pygmaea)),
+                            ((Eledone_cirrhosa,Eledone_moschata),Enteroctopus_dofleini))),((Ocythoe_tuberculata,(Argonauta_argo)),
+                            (Tremoctopus_violaceus,Haliphron_atlanticus)))),Vampyroteuthis_infernalis),
+                            ((((Sepietta_oweniana,Sepietta_obscura),Sepiola_rondeleti),(Heteroteuthis_dispar,Neorossia_caroli)),
+                            (((Lolliguncula_brevis,(Loligo_vulgaris,Loligo_forbesii)),(Spirula_spirula,((Bathyteuthis_abyssicola,Chtenopteryx_sicula),
+                            (((((Taonius_pavo,(Helicocranchia_papillata,Galiteuthis_glacialis)),Teuthowenia_megalops),Megalocranchia_maxima),
+                            (Cranchia_scabra,Leachia_dislocata)),(((Pterygioteuthis_giardi_hoylei,(Onychoteuthis_banksii,Gonatus_fabricii)),
+                            ((Lycoteuthis_lorigera,(Discoteuthis_laciniosa,((Joubiniteuthis_portieri,Mastigoteuthis_schmidti),
+                            (Grimalditeuthis_bonplandi,Chiroteuthis_veranyi)))),(Neoteuthis_thielei,Architeuthis_dux))),
+                            Histioteuthis_miranda))))),(Sepia_officinalis,Sepiella_japonica))));")
 plot.phylo(cephtree291122, cex=0.7)
 write.tree(cephtree291122, file="~/nonhumans/di_cephproject/phylos/cephtree291122.tre")
 write.nexus(cephtree291122, file="~/nonhumans/di_cephproject/phylos/cephtree291122.nex")
 
-#
+#Add Bathothauma_lyromma and Egea_inermis from fernández-alvarez2022
+plot(read.tree(text="(((Bathothauma_lyromma,Teuthowenia_megalops), 
+  (Helicocranchia_papillata, Taonius_pavo)),(Megalocranchia_maxima,Egea_inermis));"))
+#placing Megalocranchia_maxima where Megalocranchia c.f. oceanica is on their tree
+#and Helicocranchia_papillata where they have Helicocranchia sp.
+#Teuthowenia_megalops where is T. pellucida
+#Bathothauma_lyromma as sister to Teuthowenia_megalops; Egea_inermis sister to Megalocranchia_maxima
+
+cephtree071222 <- read.tree(text="((((Cirrothauma_murrayi,Cirroteuthis_muelleri),((((Octopus_cyanea,Octopus_vulgaris),Hapalochlaena_maculosa),
+                            (((Vitreledonella_richardi,Amphitretus_pelagicus) ,(Japetella_diaphana,Bolitaena_pygmaea)),
+                            ((Eledone_cirrhosa,Eledone_moschata),Enteroctopus_dofleini))),((Ocythoe_tuberculata,(Argonauta_argo)),
+                            (Tremoctopus_violaceus,Haliphron_atlanticus)))),Vampyroteuthis_infernalis),
+                            ((((Sepietta_oweniana,Sepietta_obscura),Sepiola_rondeleti),(Heteroteuthis_dispar,Neorossia_caroli)),
+                            (((Lolliguncula_brevis,(Loligo_vulgaris,Loligo_forbesii)),(Spirula_spirula,((Bathyteuthis_abyssicola,Chtenopteryx_sicula),
+                            (((((Taonius_pavo,(Helicocranchia_papillata,Galiteuthis_glacialis)), (Teuthowenia_megalops, Bathothauma_lyromma) ), (Megalocranchia_maxima, Egea_inermis) ),
+                            (Cranchia_scabra,Leachia_dislocata)),(((Pterygioteuthis_giardi_hoylei,(Onychoteuthis_banksii,Gonatus_fabricii)),
+                            ((Lycoteuthis_lorigera,(Discoteuthis_laciniosa,((Joubiniteuthis_portieri,Mastigoteuthis_schmidti),
+                            (Grimalditeuthis_bonplandi,Chiroteuthis_veranyi)))),(Neoteuthis_thielei,Architeuthis_dux))),
+                            Histioteuthis_miranda))))),(Sepia_officinalis,Sepiella_japonica))));")
+plot.phylo(cephtree071222, cex=0.7)
+
+
+
