@@ -83,7 +83,7 @@ lindbackbone260922 <- read.tree(text="(((Cirrothauma_murrayi:1.258289268,((((Oct
                                 (Sepia_officinalis:0.1886095277,Sepiella_japonica:0.1161219329):0.3562701358):0.0404534956):0.0614491775);")
 plot(lindbackbone260922)
 #this was incredibly inefficient to add a single taxon
-plot(lindbackbone260922, use.edge.length=FALSE, font=1)
+plot.phylo(lindbackbone260922, use.edge.length=FALSE, font=1)
 
 is.ultrametric(lindbackbone260922)
 #editing tree, 08.10.22
@@ -256,17 +256,24 @@ plot(read.tree(text="(((Bathothauma_lyromma,Teuthowenia_megalops),
 #Bathothauma_lyromma as sister to Teuthowenia_megalops; Egea_inermis sister to Megalocranchia_maxima
 
 cephtree071222 <- read.tree(text="((((Cirrothauma_murrayi,Cirroteuthis_muelleri),((((Octopus_cyanea,Octopus_vulgaris),Hapalochlaena_maculosa),
-                            (((Vitreledonella_richardi,Amphitretus_pelagicus) ,(Japetella_diaphana,Bolitaena_pygmaea)),
+                            (((Vitreledonella_richardi,Amphitretus_pelagicus),(Japetella_diaphana,Bolitaena_pygmaea)),
                             ((Eledone_cirrhosa,Eledone_moschata),Enteroctopus_dofleini))),((Ocythoe_tuberculata,(Argonauta_argo)),
                             (Tremoctopus_violaceus,Haliphron_atlanticus)))),Vampyroteuthis_infernalis),
                             ((((Sepietta_oweniana,Sepietta_obscura),Sepiola_rondeleti),(Heteroteuthis_dispar,Neorossia_caroli)),
                             (((Lolliguncula_brevis,(Loligo_vulgaris,Loligo_forbesii)),(Spirula_spirula,((Bathyteuthis_abyssicola,Chtenopteryx_sicula),
-                            (((((Taonius_pavo,(Helicocranchia_papillata,Galiteuthis_glacialis)), (Teuthowenia_megalops, Bathothauma_lyromma) ), (Megalocranchia_maxima, Egea_inermis) ),
-                            (Cranchia_scabra,Leachia_dislocata)),(((Pterygioteuthis_giardi_hoylei,(Onychoteuthis_banksii,Gonatus_fabricii)),
+                            (((((Taonius_pavo,(Helicocranchia_papillata,Galiteuthis_glacialis)),(Teuthowenia_megalops, Bathothauma_lyromma)),
+                            (Megalocranchia_maxima, Egea_inermis)),(Cranchia_scabra,Leachia_dislocata)),
+                            (((Pterygioteuthis_giardi_hoylei,(Onychoteuthis_banksii,Gonatus_fabricii)),
                             ((Lycoteuthis_lorigera,(Discoteuthis_laciniosa,((Joubiniteuthis_portieri,Mastigoteuthis_schmidti),
                             (Grimalditeuthis_bonplandi,Chiroteuthis_veranyi)))),(Neoteuthis_thielei,Architeuthis_dux))),
                             Histioteuthis_miranda))))),(Sepia_officinalis,Sepiella_japonica))));")
 plot.phylo(cephtree071222, cex=0.7)
 
+write.tree(cephtree071222, file="~/nonhumans/di_cephproject/phylos/cephtree071222.tre")
+write.nexus(cephtree071222, file="~/nonhumans/di_cephproject/phylos/cephtree071222.nex")
 
+plot(read.tree(text="((((((Oegopsida), Bathyteuthida), Spirulida), Myopsida), Sepiida), Sepiolida);"))
+plot(read.tree(text="(((Myopsida, Sepiida), Oegopsida), Sepiolida);"))
 
+usethis::create_github_token()
+gitcreds::gitcreds_set()
