@@ -448,3 +448,21 @@ plot.phylo(cephtree230123, cex=0.7, font=1, no.margin=T)
 
 write.tree(cephtree230123, file="~/nonhumans/di_cephproject/phylos/cephtree230123.tre")
 write.nexus(cephtree230123, file="~/nonhumans/di_cephproject/phylos/cephtree230123.nex")
+
+#changing argonautids to single clade based on correspondence w/ Jan 02.02.23
+cephtree020223 <- read.tree(text=" ((((Cirrothauma_murrayi,Cirroteuthis_muelleri),((Eledone_cirrhosa,Eledone_moschata),
+                            ((((((Scaeurgus_unicirrhus, Callistoctopus_macropus, Macrotritopus_defilippi),((Octopus_cyanea,Octopus_vulgaris),
+                            (Amphioctopus_fangsiao, Hapalochlaena_maculosa), Abdopus_capricornicus)),
+                            ((Ocythoe_tuberculata,Argonauta_argo),(Tremoctopus_violaceus,Haliphron_atlanticus))),Enteroctopus_dofleini),
+                            ((Vitreledonella_richardi,Amphitretus_pelagicus),(Japetella_diaphana,Bolitaena_pygmaea)))))),Vampyroteuthis_infernalis),
+                            (((((((((Alloteuthis_media, Alloteuthis_subulata),(Loligo_vulgaris,Loligo_forbesi)),Lolliguncula_brevis),Sepioteuthis_sepioidea))),
+                            (Sepia_officinalis,Sepiella_japonica),(Spirula_spirula,((Bathyteuthis_abyssicola,Chtenopteryx_sicula),
+                            ((((((Taonius_pavo,(Helicocranchia_papillata,Galiteuthis_glacialis)),
+                            (Teuthowenia_megalops,Bathothauma_lyromma)),(Megalocranchia_maxima,Egea_inermis)),
+                            (Cranchia_scabra,Leachia_dislocata)),(Illex_illecebrosus)),
+                            (((Pterygioteuthis_giardi_hoylei,(Onychoteuthis_banksii,Gonatus_fabricii)),
+                            ((Discoteuthis_laciniosa,((Abraliopsis_morisii, (Lycoteuthis_lorigera,Pyroteuthis_margaritifera)),(((Joubiniteuthis_portieri,Mastigoteuthis_schmidti),
+                            (Grimalditeuthis_bonplandi,Chiroteuthis_veranyi)),Octopoteuthis_danae))),
+                            (Neoteuthis_thielei,Architeuthis_dux))),Histioteuthis_miranda))))),
+                            (((Sepietta_oweniana,Sepietta_obscura),Sepiola_rondeleti),(Heteroteuthis_dispar,Neorossia_caroli))),Idiosepius_paradoxus));")
+plot.phylo(cephtree020223, cex=0.7, font=1, no.margin=T)
