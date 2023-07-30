@@ -168,10 +168,10 @@ write.nexus(cephtree201022, file="~/nonhumans/di_cephproject/phylos/cephtree2010
 
 
 #let's try a toy phylogeny
-ac <-read.tree(text="(((a), ((b, c))));")
+ac <-read.tree(text="(((a),((b,c))));")
 ac <- compute.brlen(ac, 1)
 plot(ac)
-af <-read.tree(text="(((a), ((b, c), (e, f))));")
+af <-read.tree(text="(((a),((b,c),(e,f))));")
 af <- compute.brlen(af, 1)
 plot(af)
 
@@ -466,3 +466,139 @@ cephtree020223 <- read.tree(text=" ((((Cirrothauma_murrayi,Cirroteuthis_muelleri
                             (Neoteuthis_thielei,Architeuthis_dux))),Histioteuthis_miranda))))),
                             (((Sepietta_oweniana,Sepietta_obscura),Sepiola_rondeleti),(Heteroteuthis_dispar,Neorossia_caroli))),Idiosepius_paradoxus));")
 plot.phylo(cephtree020223, cex=0.7, font=1, no.margin=T)
+
+#and adding P. pulchella as sister to Lolliguncula from here but need to check with Jan
+cephtree020223 <- read.tree(text=" ((((Cirrothauma_murrayi,Cirroteuthis_muelleri),((Eledone_cirrhosa,Eledone_moschata),
+                            ((((((Scaeurgus_unicirrhus, Callistoctopus_macropus, Macrotritopus_defilippi),((Octopus_cyanea,Octopus_vulgaris),
+                            (Amphioctopus_fangsiao, Hapalochlaena_maculosa), Abdopus_capricornicus)),
+                            ((Ocythoe_tuberculata,Argonauta_argo),(Tremoctopus_violaceus,Haliphron_atlanticus))),Enteroctopus_dofleini),
+                            ((Vitreledonella_richardi,Amphitretus_pelagicus),(Japetella_diaphana,Bolitaena_pygmaea)))))),Vampyroteuthis_infernalis),
+                            (((((((((Alloteuthis_media, Alloteuthis_subulata),(Loligo_vulgaris,Loligo_forbesi)),(Lolliguncula_brevis,Pickfordiateuthis_pulchella)),Sepioteuthis_sepioidea))),
+                            (Sepia_officinalis,Sepiella_japonica),(Spirula_spirula,((Bathyteuthis_abyssicola,Chtenopteryx_sicula),
+                            ((((((Taonius_pavo,(Helicocranchia_papillata,Galiteuthis_glacialis)),
+                            (Teuthowenia_megalops,Bathothauma_lyromma)),(Megalocranchia_maxima,Egea_inermis)),
+                            (Cranchia_scabra,Leachia_dislocata)),(Illex_illecebrosus)),
+                            (((Pterygioteuthis_giardi_hoylei,(Onychoteuthis_banksii,Gonatus_fabricii)),
+                            ((Discoteuthis_laciniosa,((Abraliopsis_morisii, (Lycoteuthis_lorigera,Pyroteuthis_margaritifera)),(((Joubiniteuthis_portieri,Mastigoteuthis_schmidti),
+                            (Grimalditeuthis_bonplandi,Chiroteuthis_veranyi)),Octopoteuthis_danae))),
+                            (Neoteuthis_thielei,Architeuthis_dux))),Histioteuthis_miranda))))),
+                            (((Sepietta_oweniana,Sepietta_obscura),Sepiola_rondeleti),(Heteroteuthis_dispar,Neorossia_caroli))),Idiosepius_paradoxus));")
+plot.phylo(cephtree020223, cex=0.7, font=1, no.margin=T)
+
+#may 2023, adding additional species with brain data!----
+#Sepioteuthis_lessoniana, Brachioteuthis_beani, Leachia_pacifica, Discoteuthis_laciniosa (I was the one who missed this one), Illex_coindetii
+#Todaropsis_eblanae, Todarodes_sagittatus, Ancistroteuthis_lichtensteinii, Sepia_plangon, Sepia_elegans, Sepia_orbignyana
+#Sepiola_affinis, Sepiola_robusta, Rossia_macrosoma, Octopoteuthis_sicula
+
+#assuming S. lessoniana is sister to S. sepioidea
+cephtree050523 <- read.tree(text=" ((((Cirrothauma_murrayi,Cirroteuthis_muelleri),((Eledone_cirrhosa,Eledone_moschata),
+                            ((((((Scaeurgus_unicirrhus, Callistoctopus_macropus, Macrotritopus_defilippi),((Octopus_cyanea,Octopus_vulgaris),
+                            (Amphioctopus_fangsiao, Hapalochlaena_maculosa), Abdopus_capricornicus)),
+                            ((Ocythoe_tuberculata,Argonauta_argo),(Tremoctopus_violaceus,Haliphron_atlanticus))),Enteroctopus_dofleini),
+                            ((Vitreledonella_richardi,Amphitretus_pelagicus),(Japetella_diaphana,Bolitaena_pygmaea)))))),Vampyroteuthis_infernalis),
+                            (((((((((Alloteuthis_media, Alloteuthis_subulata),(Loligo_vulgaris,Loligo_forbesi)),(Lolliguncula_brevis,Pickfordiateuthis_pulchella)),(Sepioteuthis_sepioidea,Sepioteuthis_lessoniana)))),
+                            (Sepia_officinalis,Sepiella_japonica),(Spirula_spirula,((Bathyteuthis_abyssicola,Chtenopteryx_sicula),
+                            ((((((Taonius_pavo,(Helicocranchia_papillata,Galiteuthis_glacialis)),
+                            (Teuthowenia_megalops,Bathothauma_lyromma)),(Megalocranchia_maxima,Egea_inermis)),
+                            (Cranchia_scabra,Leachia_dislocata)),(Illex_illecebrosus)),
+                            (((Pterygioteuthis_giardi_hoylei,(Onychoteuthis_banksii,Gonatus_fabricii)),
+                            ((Discoteuthis_laciniosa,((Abraliopsis_morisii, (Lycoteuthis_lorigera,Pyroteuthis_margaritifera)),(((Joubiniteuthis_portieri,Mastigoteuthis_schmidti),
+                            (Grimalditeuthis_bonplandi,Chiroteuthis_veranyi)),Octopoteuthis_danae))),
+                            (Neoteuthis_thielei,Architeuthis_dux))),Histioteuthis_miranda))))),
+                            (((Sepietta_oweniana,Sepietta_obscura),Sepiola_rondeleti),(Heteroteuthis_dispar,Neorossia_caroli))),Idiosepius_paradoxus));")
+plot.phylo(cephtree050523, cex=0.7, font=1, no.margin=T)
+
+#now adding a bunch of oegopsida from fernandez-alvarez----
+#will use treemerger 
+
+dato <- data.frame(bind=c("Octopoteuthis_sicula", "Leachia_pacifica", "Abralia_veranyi", "Ancistroteuthis_lichtensteinii", "Illex_coindetii", "Brachioteuthis_riisei"),
+                   reference=c("Octopoteuthis_danae", "Leachia_dislocata", "Abraliopsis_morisii", "Histioteuthis_miranda", "Illex_illecebrosus", "Discoteuthis_laciniosa"),
+                   poly=c(FALSE)
+)
+cephtree050523 <- compute.brlen(cephtree050523, 1)
+cephtree050523
+jh <- tree.merger(backbone=cephtree050523, data=dato, plot=FALSE)
+jh$edge.length <- NULL
+plot.phylo(jh, cex=0.7)
+
+dato <- read.csv("file:///Users/kiranbasava/Desktop/dato.csv")
+jh <- compute.brlen(jh, 1)
+jh <- tree.merger(backbone=jh, data=dato, plot=FALSE)
+
+write.tree(jh, file="~/nonhumans/di_cephproject/phylos/cephtree050523.tre")
+write.nexus(jh, file="~/nonhumans/di_cephproject/phylos/cephtree050523.nex")
+
+ceph_interm_050523 <- read.tree(text="((((Cirrothauma_murrayi,Cirroteuthis_muelleri),((Eledone_cirrhosa,Eledone_moschata),((((((Scaeurgus_unicirrhus,Callistoctopus_macropus,Macrotritopus_defilippi),((Octopus_cyanea,Octopus_vulgaris),(Amphioctopus_fangsiao,Hapalochlaena_maculosa),Abdopus_capricornicus)),((Ocythoe_tuberculata,Argonauta_argo),(Tremoctopus_violaceus,Haliphron_atlanticus))),Enteroctopus_dofleini),((Vitreledonella_richardi,Amphitretus_pelagicus),(Japetella_diaphana,Bolitaena_pygmaea)))))),Vampyroteuthis_infernalis),(((((((((Alloteuthis_media,Alloteuthis_subulata),(Loligo_vulgaris,Loligo_forbesi)),(Lolliguncula_brevis,Pickfordiateuthis_pulchella)),(Sepioteuthis_sepioidea,Sepioteuthis_lessoniana)))),(Sepia_officinalis,Sepiella_japonica),(Spirula_spirula,((Bathyteuthis_abyssicola,Chtenopteryx_sicula),((((((Taonius_pavo,(Helicocranchia_papillata,Galiteuthis_glacialis)),(Teuthowenia_megalops,Bathothauma_lyromma)),(Megalocranchia_maxima,Egea_inermis)),(Cranchia_scabra,(Leachia_dislocata,Leachia_pacifica))),((Illex_illecebrosus,Illex_coindetii))),(((Pterygioteuthis_giardi_hoylei,(Onychoteuthis_banksii,Gonatus_fabricii)),(((Discoteuthis_laciniosa,Brachioteuthis_riisei),(((Abraliopsis_morisii,Abralia_veranyi),(Lycoteuthis_lorigera,Pyroteuthis_margaritifera)),(((Joubiniteuthis_portieri,Mastigoteuthis_schmidti),(Grimalditeuthis_bonplandi,Chiroteuthis_veranyi)),(Octopoteuthis_danae,Octopoteuthis_sicula)))),(Neoteuthis_thielei,Architeuthis_dux))),(Histioteuthis_miranda,Ancistroteuthis_lichtensteinii)))))),(((Sepietta_oweniana,Sepietta_obscura),Sepiola_rondeleti),(Heteroteuthis_dispar,Neorossia_caroli))),Idiosepius_paradoxus));
+")
+
+dato <- data.frame(bind=c("Todaropsis_eblanae", "Todarodes_sagittatus"),
+                   reference=c("Illex_illecebrosus-Illex_coindetii", "Illex_coindetii-Todaropsis_eblanae"),
+                   poly=c(FALSE)
+)
+
+ceph_interm_050523 <- compute.brlen(ceph_interm_050523, 1)
+jh <- tree.merger(backbone=ceph_interm_050523, data=dato, plot=FALSE)
+jh$edge.length <- NULL
+plot.phylo(jh, cex=0.7)
+
+cephtree060523 <- jh
+write.tree(jh, file="~/nonhumans/di_cephproject/phylos/cephtree060523.tre")
+write.nexus(jh, file="~/nonhumans/di_cephproject/phylos/cephtree060523.nex")
+
+cephtree060523 <- read.tree(text="((((Cirrothauma_murrayi,Cirroteuthis_muelleri),((Eledone_cirrhosa,Eledone_moschata),((((((Scaeurgus_unicirrhus,Callistoctopus_macropus,Macrotritopus_defilippi),((Octopus_cyanea,Octopus_vulgaris),(Amphioctopus_fangsiao,Hapalochlaena_maculosa),Abdopus_capricornicus)),((Ocythoe_tuberculata,Argonauta_argo),(Tremoctopus_violaceus,Haliphron_atlanticus))),Enteroctopus_dofleini),((Vitreledonella_richardi,Amphitretus_pelagicus),(Japetella_diaphana,Bolitaena_pygmaea)))))),Vampyroteuthis_infernalis),(((((((((Alloteuthis_media,Alloteuthis_subulata),(Loligo_vulgaris,Loligo_forbesi)),(Lolliguncula_brevis,Pickfordiateuthis_pulchella)),(Sepioteuthis_sepioidea,Sepioteuthis_lessoniana)))),(Sepia_officinalis,Sepiella_japonica),(Spirula_spirula,((Bathyteuthis_abyssicola,Chtenopteryx_sicula),((((((Taonius_pavo,(Helicocranchia_papillata,Galiteuthis_glacialis)),(Teuthowenia_megalops,Bathothauma_lyromma)),(Megalocranchia_maxima,Egea_inermis)),(Cranchia_scabra,(Leachia_dislocata,Leachia_pacifica))),((((Illex_illecebrosus,Illex_coindetii),Todaropsis_eblanae),Todarodes_sagittatus))),(((Pterygioteuthis_giardi_hoylei,(Onychoteuthis_banksii,Gonatus_fabricii)),(((Discoteuthis_laciniosa,Brachioteuthis_riisei),(((Abraliopsis_morisii,Abralia_veranyi),(Lycoteuthis_lorigera,Pyroteuthis_margaritifera)),(((Joubiniteuthis_portieri,Mastigoteuthis_schmidti),(Grimalditeuthis_bonplandi,Chiroteuthis_veranyi)),(Octopoteuthis_danae,Octopoteuthis_sicula)))),(Neoteuthis_thielei,Architeuthis_dux))),(Histioteuthis_miranda,Ancistroteuthis_lichtensteinii)))))),(((Sepietta_oweniana,Sepietta_obscura),Sepiola_rondeleti),(Heteroteuthis_dispar,Neorossia_caroli))),Idiosepius_paradoxus));
+")
+plot.phylo(cephtree060523, cex=0.7)
+
+#add R. macrosoma as sister to N. caroli (H. dispar og to these 2) and S. affinis and robusta sisters to rondeleti
+cephtree060523.1 <- read.tree(text="((((Cirrothauma_murrayi,Cirroteuthis_muelleri),((Eledone_cirrhosa,Eledone_moschata),
+((((((Scaeurgus_unicirrhus,Callistoctopus_macropus,Macrotritopus_defilippi),((Octopus_cyanea,Octopus_vulgaris),
+(Amphioctopus_fangsiao,Hapalochlaena_maculosa),Abdopus_capricornicus)),((Ocythoe_tuberculata,Argonauta_argo),
+(Tremoctopus_violaceus,Haliphron_atlanticus))),Enteroctopus_dofleini),((Vitreledonella_richardi,Amphitretus_pelagicus),
+(Japetella_diaphana,Bolitaena_pygmaea)))))),Vampyroteuthis_infernalis),
+(((((((((Alloteuthis_media,Alloteuthis_subulata),(Loligo_vulgaris,Loligo_forbesi)),
+(Lolliguncula_brevis,Pickfordiateuthis_pulchella)),(Sepioteuthis_sepioidea,Sepioteuthis_lessoniana)))),
+(Sepia_officinalis,Sepiella_japonica),(Spirula_spirula,((Bathyteuthis_abyssicola,Chtenopteryx_sicula),
+((((((Taonius_pavo,(Helicocranchia_papillata,Galiteuthis_glacialis)),(Teuthowenia_megalops,Bathothauma_lyromma)),
+(Megalocranchia_maxima,Egea_inermis)),(Cranchia_scabra,(Leachia_dislocata,Leachia_pacifica))),
+((((Illex_illecebrosus,Illex_coindetii),Todaropsis_eblanae),Todarodes_sagittatus))),
+(((Pterygioteuthis_giardi_hoylei,(Onychoteuthis_banksii,Gonatus_fabricii)),
+(((Discoteuthis_laciniosa,Brachioteuthis_riisei),(((Abraliopsis_morisii,Abralia_veranyi),
+(Lycoteuthis_lorigera,Pyroteuthis_margaritifera)),(((Joubiniteuthis_portieri,Mastigoteuthis_schmidti),
+(Grimalditeuthis_bonplandi,Chiroteuthis_veranyi)),(Octopoteuthis_danae,Octopoteuthis_sicula)))),
+(Neoteuthis_thielei,Architeuthis_dux))),(Histioteuthis_miranda,Ancistroteuthis_lichtensteinii)))))),
+(((Sepietta_oweniana,Sepietta_obscura),(Sepiola_affinis,Sepiola_rondeleti,Sepiola_robusta)),(Heteroteuthis_dispar,(Neorossia_caroli, Rossia_macrosoma)))),Idiosepius_paradoxus));")
+plot.phylo(cephtree060523.1, cex=0.8)
+
+write.tree(cephtree060523.1, file="~/nonhumans/di_cephproject/phylos/cephtree060523.1.tre")
+write.nexus(cephtree060523.1, file="~/nonhumans/di_cephproject/phylos/cephtree060523.1.nex")
+
+#remove Amphioctopus fangsiao, Sepietta obscura, Brachioteuthis riisei, and Octopoteuthis sicula; wrong/juvenile brain data
+
+cephtree150523 <- drop.tip(cephtree060523.1, tip=c("Amphioctopus_fangsiao", "Sepietta_obscura", "Brachioteuthis_riisei", "Octopoteuthis_sicula"), trim.internal=TRUE)
+plot.phylo(cephtree150523, cex=0.9, no.margin=T)
+print(write.tree(cephtree150523)) #holy shit that worked
+
+cephtree150523 <- read.tree(text="((((Cirrothauma_murrayi,Cirroteuthis_muelleri),((Eledone_cirrhosa,Eledone_moschata),(((((Scaeurgus_unicirrhus,Callistoctopus_macropus,Macrotritopus_defilippi),((Octopus_cyanea,Octopus_vulgaris),Hapalochlaena_maculosa,Abdopus_capricornicus)),((Ocythoe_tuberculata,Argonauta_argo),(Tremoctopus_violaceus,Haliphron_atlanticus))),Enteroctopus_dofleini),((Vitreledonella_richardi,Amphitretus_pelagicus),(Japetella_diaphana,Bolitaena_pygmaea))))),Vampyroteuthis_infernalis),(((((((Alloteuthis_media,Alloteuthis_subulata),(Loligo_vulgaris,Loligo_forbesi)),(Lolliguncula_brevis,Pickfordiateuthis_pulchella)),(Sepioteuthis_sepioidea,Sepioteuthis_lessoniana)),(Sepia_officinalis,Sepiella_japonica),(Spirula_spirula,((Bathyteuthis_abyssicola,Chtenopteryx_sicula),((((((Taonius_pavo,(Helicocranchia_papillata,Galiteuthis_glacialis)),(Teuthowenia_megalops,Bathothauma_lyromma)),(Megalocranchia_maxima,Egea_inermis)),(Cranchia_scabra,(Leachia_dislocata,Leachia_pacifica))),(((Illex_illecebrosus,Illex_coindetii),Todaropsis_eblanae),Todarodes_sagittatus)),(((Pterygioteuthis_giardi_hoylei,(Onychoteuthis_banksii,Gonatus_fabricii)),((Discoteuthis_laciniosa,(((Abraliopsis_morisii,Abralia_veranyi),(Lycoteuthis_lorigera,Pyroteuthis_margaritifera)),(((Joubiniteuthis_portieri,Mastigoteuthis_schmidti),(Grimalditeuthis_bonplandi,Chiroteuthis_veranyi)),Octopoteuthis_danae))),(Neoteuthis_thielei,Architeuthis_dux))),(Histioteuthis_miranda,Ancistroteuthis_lichtensteinii)))))),((Sepietta_oweniana,(Sepiola_affinis,Sepiola_rondeleti,Sepiola_robusta)),(Heteroteuthis_dispar,(Neorossia_caroli,Rossia_macrosoma)))),Idiosepius_paradoxus));")
+write.tree(cephtree150523, file="~/nonhumans/di_cephproject/phylos/cephtree150523.tre")
+write.nexus(cephtree150523, file="~/nonhumans/di_cephproject/phylos/cephtree150523.nex")
+
+
+cephtree020623 <- drop.tip(cephtree150523, tip=c("Leachia_pacifica", "Sepiella_japonica"), trim.internal = TRUE)
+write.tree(cephtree020623, file="~/nonhumans/di_cephproject/phylos/cephtree020623.tre")
+write.nexus(cephtree020623, file="~/nonhumans/di_cephproject/phylos/cephtree020623.nex")
+plot.phylo(cephtree020623, cex=0.8, no.margin=T)
+
+#add S. melancholicus as sister to T. pavo
+#and Bathypolypus's sister to Enteroctopus
+
+print(write.tree(cephtree020623)) 
+cephtree300723 <- read.tree(text="((((Cirrothauma_murrayi,Cirroteuthis_muelleri),((Eledone_cirrhosa,Eledone_moschata),(((((Scaeurgus_unicirrhus,Callistoctopus_macropus,Macrotritopus_defilippi),((Octopus_cyanea,Octopus_vulgaris),Hapalochlaena_maculosa,Abdopus_capricornicus)),((Ocythoe_tuberculata,Argonauta_argo),(Tremoctopus_violaceus,Haliphron_atlanticus))),((Bathypolypus_sponsalis,Bathypolypus_bairdii), Enteroctopus_dofleini)),((Vitreledonella_richardi,Amphitretus_pelagicus),(Japetella_diaphana,Bolitaena_pygmaea))))),Vampyroteuthis_infernalis),(((((((Alloteuthis_media,Alloteuthis_subulata),(Loligo_vulgaris,Loligo_forbesi)),(Lolliguncula_brevis,Pickfordiateuthis_pulchella)),(Sepioteuthis_sepioidea,Sepioteuthis_lessoniana)),Sepia_officinalis,(Spirula_spirula,((Bathyteuthis_abyssicola,Chtenopteryx_sicula),(((((((Taonius_pavo, Sandalops_melancholicus), (Helicocranchia_papillata,Galiteuthis_glacialis)),(Teuthowenia_megalops,Bathothauma_lyromma)),(Megalocranchia_maxima,Egea_inermis)),(Cranchia_scabra,Leachia_dislocata)),(((Illex_illecebrosus,Illex_coindetii),Todaropsis_eblanae),Todarodes_sagittatus)),(((Pterygioteuthis_giardi_hoylei,(Onychoteuthis_banksii,Gonatus_fabricii)),((Discoteuthis_laciniosa,(((Abraliopsis_morisii,Abralia_veranyi),(Lycoteuthis_lorigera,Pyroteuthis_margaritifera)),(((Joubiniteuthis_portieri,Mastigoteuthis_schmidti),(Grimalditeuthis_bonplandi,Chiroteuthis_veranyi)),Octopoteuthis_danae))),(Neoteuthis_thielei,Architeuthis_dux))),(Histioteuthis_miranda,Ancistroteuthis_lichtensteinii)))))),((Sepietta_oweniana,(Sepiola_affinis,Sepiola_rondeleti,Sepiola_robusta)),(Heteroteuthis_dispar,(Neorossia_caroli,Rossia_macrosoma)))),Idiosepius_paradoxus));")
+
+#replace S. officinalis with clade of Sepia from this paper: https://link.springer.com/article/10.1007/s00227-023-04195-3/figures/1
+plot(read.tree(text="(((Sepia_elegans, Sepia_orbignyana), Sepia_officinalis), (Sepia_plangon, Sepia_bandensis))
+;"))
+
+cephtree300723 <- read.tree(text="((((Cirrothauma_murrayi,Cirroteuthis_muelleri),((Eledone_cirrhosa,Eledone_moschata),(((((Scaeurgus_unicirrhus,Callistoctopus_macropus,Macrotritopus_defilippi),((Octopus_cyanea,Octopus_vulgaris),Hapalochlaena_maculosa,Abdopus_capricornicus)),((Ocythoe_tuberculata,Argonauta_argo),(Tremoctopus_violaceus,Haliphron_atlanticus))),((Bathypolypus_sponsalis,Bathypolypus_bairdii), Enteroctopus_dofleini)),((Vitreledonella_richardi,Amphitretus_pelagicus),(Japetella_diaphana,Bolitaena_pygmaea))))),Vampyroteuthis_infernalis),(((((((Alloteuthis_media,Alloteuthis_subulata),(Loligo_vulgaris,Loligo_forbesi)),(Lolliguncula_brevis,Pickfordiateuthis_pulchella)),(Sepioteuthis_sepioidea,Sepioteuthis_lessoniana)),(((Sepia_elegans, Sepia_orbignyana), Sepia_officinalis), (Sepia_plangon, Sepia_bandensis)),(Spirula_spirula,((Bathyteuthis_abyssicola,Chtenopteryx_sicula),(((((((Taonius_pavo, Sandalops_melancholicus), (Helicocranchia_papillata,Galiteuthis_glacialis)),(Teuthowenia_megalops,Bathothauma_lyromma)),(Megalocranchia_maxima,Egea_inermis)),(Cranchia_scabra,Leachia_dislocata)),(((Illex_illecebrosus,Illex_coindetii),Todaropsis_eblanae),Todarodes_sagittatus)),(((Pterygioteuthis_giardi_hoylei,(Onychoteuthis_banksii,Gonatus_fabricii)),((Discoteuthis_laciniosa,(((Abraliopsis_morisii,Abralia_veranyi),(Lycoteuthis_lorigera,Pyroteuthis_margaritifera)),(((Joubiniteuthis_portieri,Mastigoteuthis_schmidti),(Grimalditeuthis_bonplandi,Chiroteuthis_veranyi)),Octopoteuthis_danae))),(Neoteuthis_thielei,Architeuthis_dux))),(Histioteuthis_miranda,Ancistroteuthis_lichtensteinii)))))),((Sepietta_oweniana,(Sepiola_affinis,Sepiola_rondeleti,Sepiola_robusta)),(Heteroteuthis_dispar,(Neorossia_caroli,Rossia_macrosoma)))),Idiosepius_paradoxus));")
+plot.phylo(cephtree300723, cex=0.8, no.margin=T)
+write.tree(cephtree300723, file="~/nonhumans/di_cephproject/phylos/cephtree300723.tre")
+write.nexus(cephtree300723, file="~/nonhumans/di_cephproject/phylos/cephtree300723.nex")
